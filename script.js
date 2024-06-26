@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function updateImageForItem(item) {
     const img = document.createElement('img');
-    img.src = `/assets/images/image-${getNextImageIndex()}.jpeg`;
+    img.src = `assets/images/image-${getNextImageIndex()}.jpeg`;
     item.appendChild(img);
   }
 
