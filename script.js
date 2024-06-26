@@ -9,6 +9,21 @@ window.addEventListener('DOMContentLoaded', () => {
     updateImageForItem(newItem);
     container.appendChild(newItem);
     manageItemLimit();
+    gsap.fromTo(
+      newItem,
+      {
+        scale: 0.5,
+        rotation: -45,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        rotation: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'back.out(1.7)',
+      }
+    );
   }
 
   function createItem(x, y) {
@@ -67,6 +82,6 @@ window.addEventListener('DOMContentLoaded', () => {
   container.addEventListener('mousemove', (e) => {
     clearTimeout(animationTimeout);
     addNewItem(e.clientX, e.clientY);
-    animationTimeout = setTimeout(startAnimation, 100);
+    animationTimeout = setTimeout(startAnimation, 900);
   });
 });
