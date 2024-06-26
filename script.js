@@ -4,6 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
     animationTimeout = null,
     currentlyPlaying = false;
 
+  const repoName = 'image-trail-animation'; // Temproray repo name, only for deploy purpose
+
   function addNewItem(x, y) {
     const newItem = createItem(x, y);
     updateImageForItem(newItem);
@@ -36,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function updateImageForItem(item) {
     const img = document.createElement('img');
-    img.src = `assets/images/image-${getNextImageIndex()}.jpeg`;
+    img.src = `${repoName}/assets/images/image-${getNextImageIndex()}.jpeg`; // Temporary image path, only for deploy purpose
     item.appendChild(img);
   }
 
